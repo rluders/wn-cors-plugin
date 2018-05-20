@@ -63,43 +63,13 @@ class Plugin extends PluginBase
     }
 
     /**
-     * Boot the plugin
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        $this->loadConfiguration();
-    }
-
-    /**
      * Register method, called when the plugin is first registered.
      *
      * @return void
      */
     public function register()
     {
-        $this->app->register(\Barryvdh\Cors\ServiceProvider::class);
+        $this->app->register(\RLuders\Cors\Providers\ServiceProvider::class);
         $this->app['router']->middleware('cors', \Barryvdh\Cors\HandleCors::class);
-    }
-
-    /**
-     * Load plugin configuration
-     *
-     * @return void
-     */
-    protected function loadConfiguration()
-    {
-        $attributes = PluginSettings::instance()->attributes;
-        foreach ($attributes as $attr => $value) {
-            if ($attr !== 'supportsCredentials'
-                || $attr !== 'maxAge'
-            ) {
-                if (!is_array($value)) {
-                    $value = [$value];
-                }
-            }
-            Config::set("cors.${attr}", $value);
-        }
     }
 }
