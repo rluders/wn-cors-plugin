@@ -69,7 +69,7 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-        $this->app->register(\RLuders\Cors\Providers\ServiceProvider::class);
+        $this->app->register(\RLuders\Cors\Providers\CorsServiceProvider::class);
         $this->app['router']->middleware('cors', \Barryvdh\Cors\HandleCors::class);
     }
 }

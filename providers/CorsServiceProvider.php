@@ -8,7 +8,7 @@ use Barryvdh\Cors\HandleCors;
 use Barryvdh\Cors\HandlePreflight;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use RLuders\JWTAuth\Models\Settings as PluginSettings;
+use RLuders\Cors\Models\Settings;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -86,16 +86,17 @@ class ServiceProvider extends BaseServiceProvider
      */
     protected function loadConfiguration()
     {
-        $attributes = PluginSettings::instance()->attributes;
-        foreach ($attributes as $attr => $value) {
-            if ($attr !== 'supportsCredentials'
-                || $attr !== 'maxAge'
-            ) {
-                if (!is_array($value)) {
-                    $value = [$value];
-                }
-            }
-            Config::set("cors.${attr}", $value);
-        }
+        
+        Config::set(
+            'cors',
+            [
+                'supportsCredentials' => (bool)Settings::get('supportsCredentials'),
+                'allowedOrigins' => explode(' ', Settings::get('allowedOrigins')),
+                'allowedHeaders' => explode(' ', Settings::get('allowedHeaders')),
+                'allowedMethods' => explode(' ', Settings::get('allowedMethods')),
+                'exposedHeaders' => explode(' ', Settings::get('exposedHeaders')),
+                'maxAge' => (int)Settings::get('maxAge')
+            ]
+        );
     }
 }
