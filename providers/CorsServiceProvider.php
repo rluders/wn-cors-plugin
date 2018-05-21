@@ -10,7 +10,7 @@ use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use RLuders\Cors\Models\Settings;
 
-class ServiceProvider extends BaseServiceProvider
+class CorsServiceProvider extends BaseServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
