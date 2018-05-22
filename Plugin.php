@@ -23,7 +23,7 @@ class Plugin extends PluginBase
             'name'        => 'rluders.cors::lang.plugin.name',
             'description' => 'rluders.cors::lang.plugin.description',
             'author'      => 'Ricardo Lüders',
-            'icon'        => 'icon-user-secret',
+            'icon'        => 'icon-exchange',
         ];
     }
 
@@ -39,7 +39,7 @@ class Plugin extends PluginBase
                 'label'       => 'rluders.cors::lang.settings.menu_label',
                 'description' => 'rluders.cors::lang.settings.menu_description',
                 'category'    => SettingsManager::CATEGORY_MISC,
-                'icon'        => 'icon-user-secret',
+                'icon'        => 'icon-exchange',
                 'class'       => 'RLuders\Cors\Models\Settings',
                 'order'       => 600,
                 'permissions' => ['rluders.cors.access_settings'],
