@@ -410,16 +410,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.27.0",
+            "version": "1.28.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "ef81c39b67200dcd7401c24363dcac05ac3a4fe9"
+                "reference": "00149d95fc91ef10f19d3a66889bc3bb7500fa7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/ef81c39b67200dcd7401c24363dcac05ac3a4fe9",
-                "reference": "ef81c39b67200dcd7401c24363dcac05ac3a4fe9",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/00149d95fc91ef10f19d3a66889bc3bb7500fa7b",
+                "reference": "00149d95fc91ef10f19d3a66889bc3bb7500fa7b",
                 "shasum": ""
             },
             "require": {
@@ -454,7 +454,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-04-23T09:02:57+00:00"
+            "time": "2018-05-18T15:26:18+00:00"
         },
         {
             "name": "psr/container",
@@ -779,12 +779,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "f09cd56de01289b6a9b0a815df7db15419656a66"
+                "reference": "c4d9f503a042c6ef4f632f8d101e8446522dee40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/f09cd56de01289b6a9b0a815df7db15419656a66",
-                "reference": "f09cd56de01289b6a9b0a815df7db15419656a66",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/c4d9f503a042c6ef4f632f8d101e8446522dee40",
+                "reference": "c4d9f503a042c6ef4f632f8d101e8446522dee40",
                 "shasum": ""
             },
             "require": {
@@ -797,7 +797,7 @@
             },
             "conflict": {
                 "symfony/config": "<3.4",
-                "symfony/dependency-injection": "<4.1",
+                "symfony/dependency-injection": "<4.2",
                 "symfony/var-dumper": "<4.1",
                 "twig/twig": "<1.34|<2.4,>=2"
             },
@@ -810,7 +810,7 @@
                 "symfony/config": "~3.4|~4.0",
                 "symfony/console": "~3.4|~4.0",
                 "symfony/css-selector": "~3.4|~4.0",
-                "symfony/dependency-injection": "^4.1",
+                "symfony/dependency-injection": "^4.2",
                 "symfony/dom-crawler": "~3.4|~4.0",
                 "symfony/expression-language": "~3.4|~4.0",
                 "symfony/finder": "~3.4|~4.0",
@@ -858,7 +858,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-16T14:42:13+00:00"
+            "time": "2018-05-21T18:43:31+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -983,12 +983,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "0f8119b8b6dfb9fdd6f7b8140065b118bb6d51d2"
+                "reference": "a1bb5da5f618903aed8efdbcb18a13b5ded4243a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/0f8119b8b6dfb9fdd6f7b8140065b118bb6d51d2",
-                "reference": "0f8119b8b6dfb9fdd6f7b8140065b118bb6d51d2",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/a1bb5da5f618903aed8efdbcb18a13b5ded4243a",
+                "reference": "a1bb5da5f618903aed8efdbcb18a13b5ded4243a",
                 "shasum": ""
             },
             "require": {
@@ -1044,7 +1044,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-16T14:42:13+00:00"
+            "time": "2018-05-21T10:10:22+00:00"
         }
     ],
     "packages-dev": [],
