@@ -1,17 +1,22 @@
 <?php
 
-namespace RLuders\Cors;
+namespace RLuders\CORS;
 
 use Config;
 use System\Classes\PluginBase;
 use System\Classes\SettingsManager;
-use RLuders\Cors\Models\Settings as PluginSettings;
+use RLuders\CORS\Models\Settings as PluginSettings;
 
 /**
  * CORS Plugin Information File.
  */
 class Plugin extends PluginBase
 {
+    /**
+     * @var boolean Determine if this plugin should have elevated privileges.
+     */
+    public $elevated = true;
+
     /**
      * Returns information about this plugin.
      *
@@ -40,7 +45,7 @@ class Plugin extends PluginBase
                 'description' => 'rluders.cors::lang.settings.menu_description',
                 'category'    => SettingsManager::CATEGORY_MISC,
                 'icon'        => 'icon-exchange',
-                'class'       => 'RLuders\Cors\Models\Settings',
+                'class'       => 'RLuders\CORS\Models\Settings',
                 'order'       => 600,
                 'permissions' => ['rluders.cors.access_settings'],
             ]
@@ -69,7 +74,7 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-        $this->app->register(\RLuders\Cors\Providers\CorsServiceProvider::class);
+        $this->app->register(\RLuders\CORS\Providers\CorsServiceProvider::class);
         $this->app['router']->middleware('cors', \Barryvdh\Cors\HandleCors::class);
     }
 }

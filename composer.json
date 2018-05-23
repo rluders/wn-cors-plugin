@@ -15,11 +15,11 @@
     ],
     "autoload": {
         "psr-4": {
-            "RLuders\\Cors\\": ""
+            "RLuders\\CORS\\": ""
         }
     },
     "require": {
-        "php": ">=7.1",
+        "php": ">=7.0",
         "composer/installers": "~1.0",
         "barryvdh/laravel-cors": "^0.11.0@dev"
     },

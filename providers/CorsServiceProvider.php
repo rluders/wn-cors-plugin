@@ -1,6 +1,6 @@
 <?php 
 
-namespace RLuders\Cors\Providers;
+namespace RLuders\CORS\Providers;
 
 use Config;
 use Asm89\Stack\CorsService;
@@ -8,7 +8,7 @@ use Barryvdh\Cors\HandleCors;
 use Barryvdh\Cors\HandlePreflight;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use RLuders\Cors\Models\Settings;
+use RLuders\CORS\Models\Settings;
 
 class CorsServiceProvider extends BaseServiceProvider
 {
@@ -58,6 +58,8 @@ class CorsServiceProvider extends BaseServiceProvider
         if (!$kernel->hasMiddleware(HandleCors::class)) {
             $kernel->prependMiddleware(HandlePreflight::class);
         }
+
+        $this->app['router']->middleware('cors', \Barryvdh\Cors\HandleCors::class);
     }
 
     /**
@@ -86,7 +88,6 @@ class CorsServiceProvider extends BaseServiceProvider
      */
     protected function loadConfiguration()
     {
-        
         Config::set(
             'cors',
             [
