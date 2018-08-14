@@ -15,6 +15,18 @@ This plugin provides a simple CORS support your for [OctoberCMS](http://www.octo
 
 3. Configure it on your OctoberCMS Backend.
 
+4. Use it on your `route.php`
+
+```php
+
+<?php 
+
+Route::group(['prefix' => 'api/e1', 'middleware' => ['\Barryvdh\Cors\HandleCors']], function(){
+    // routes here
+});
+
+```
+
 ## Support on Beerpay
 
 Hey dude! Help me out for a couple of beers!
