@@ -1,6 +1,6 @@
 <?php
 
-namespace RLuders\CORS\Models;
+namespace RLuders\Cors\Models;
 
 use Model;
 
