@@ -2,5 +2,8 @@
     - First version of RLuders.Cors
 1.0.1:
     - Fix the icon
-1.0.2:
+1.1.0:
     - Fix plugin dependencies
+    - Fix English language
+    - Adds Brazilian Portuguese language
+    - Replace the namespace RLuders\CORS to Rluders\Cors
