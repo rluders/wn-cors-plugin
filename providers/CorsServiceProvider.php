@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace RLuders\CORS\Providers;
+namespace RLuders\Cors\Providers;
 
 use Config;
 use Asm89\Stack\CorsService;
@@ -8,7 +8,7 @@ use Barryvdh\Cors\HandleCors;
 use Barryvdh\Cors\HandlePreflight;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use RLuders\CORS\Models\Settings;
+use RLuders\Cors\Models\Settings;
 
 class CorsServiceProvider extends BaseServiceProvider
 {
@@ -80,7 +80,7 @@ class CorsServiceProvider extends BaseServiceProvider
 
         return '#^'.$pattern.'\z#u';
     }
-    
+
     /**
      * Load plugin configuration
      *

@@ -4,3 +4,6 @@
     - Fix the icon
 1.0.2:
     - Fix plugin dependencies
+    - Fix English language
+    - Adds Brazilian Portuguese language
+    - Replace the namespace RLuders\CORS to Rluders\Cors

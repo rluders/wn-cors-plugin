@@ -26,7 +26,7 @@ return [
             ],
             'allowedMethods' => [
                 'label' => 'Allowed Methods',
-                'comment' => 'The HTTP methods that can be requested (use * for all domains).'
+                'comment' => 'The HTTP methods that can be requested (use * for all methods).'
             ],
             'exposedHeaders' => [
                 'label' => 'Exposed Headers',
