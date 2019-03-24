@@ -45,8 +45,6 @@ Route::group(['prefix' => 'api/e1', 'middleware' => ['\Barryvdh\Cors\HandleCors'
 
 ```
 
-## Support on Beerpay
+## LICENSE
 
-Hey dude! Help me out for a couple of beers!
-
-[![Beerpay](https://beerpay.io/rluders/oc-cors-plugin/badge.svg)](https://beerpay.io/rluders/oc-cors-plugin) [![Beerpay](https://beerpay.io/rluders/oc-cors-plugin/make-wish.svg)](https://beerpay.io/rluders/oc-cors-plugin)
+MIT
