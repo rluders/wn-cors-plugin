@@ -9,7 +9,8 @@
   </a>
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/github/license/rluders/oc-cors-plugin.svg">
-  </a>
+  </a>            
+  <a href="https://snyk.io//test/github/rluders/oc-cors-plugin?targetFile=composer.lock"><img src="https://snyk.io//test/github/rluders/oc-cors-plugin/badge.svg?targetFile=composer.lock" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io//test/github/rluders/oc-cors-plugin?targetFile=composer.lock" style="max-width:100%;"></a>  
 </p>
 
 This plugin provides a simple CORS support your for [OctoberCMS](http://www.octobercms.com) implementing the [barryvdh/laravel-cors](https://github.com/barryvdh/laravel-cors).
