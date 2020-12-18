@@ -9,3 +9,5 @@
     - Replace the namespace RLuders\CORS to RLuders\Cors
 1.0.3:
     - Adds the middleware to the api Middleware Group
+1.0.4:
+    - Update dependencies
