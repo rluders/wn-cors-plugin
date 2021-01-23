@@ -1,47 +1,54 @@
 # ===================================
 #  Field Definitions
 # ===================================
-    
+
 fields:
 
     # CORS Settings
-    
+
     supportsCredentials:
         span: left
         label: rluders.cors::lang.settings.fields.supportsCredentials.label
-        comment: rluders.cors::lang.settings.fields.supportsCredentials.comment            
+        comment: rluders.cors::lang.settings.fields.supportsCredentials.comment
         type: switch
-    
+
+    paths:
+        span: left
+        label: rluders.cors::lang.settings.fields.paths.label
+        comment: rluders.cors::lang.settings.fields.paths.comment
+        type: taglist
+        separator: space
+
     allowedOrigins:
         span: left
         label: rluders.cors::lang.settings.fields.allowedOrigins.label
-        comment: rluders.cors::lang.settings.fields.allowedOrigins.comment            
+        comment: rluders.cors::lang.settings.fields.allowedOrigins.comment
         type: taglist
         separator: space
-    
+
     allowedHeaders:
         span: left
         label: rluders.cors::lang.settings.fields.allowedHeaders.label
-        comment: rluders.cors::lang.settings.fields.allowedHeaders.comment            
+        comment: rluders.cors::lang.settings.fields.allowedHeaders.comment
         type: taglist
         separator: space
-    
+
     allowedMethods:
         span: left
         label: rluders.cors::lang.settings.fields.allowedMethods.label
-        comment: rluders.cors::lang.settings.fields.allowedMethods.comment            
+        comment: rluders.cors::lang.settings.fields.allowedMethods.comment
         type: taglist
         separator: space
 
     exposedHeaders:
         span: left
         label: rluders.cors::lang.settings.fields.exposedHeaders.label
-        comment: rluders.cors::lang.settings.fields.exposedHeaders.comment            
+        comment: rluders.cors::lang.settings.fields.exposedHeaders.comment
         type: taglist
         separator: space
 
     maxAge:
         span: left
         label: rluders.cors::lang.settings.fields.maxAge.label
-        comment: rluders.cors::lang.settings.fields.maxAge.comment            
+        comment: rluders.cors::lang.settings.fields.maxAge.comment
         type: number

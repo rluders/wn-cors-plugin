@@ -75,7 +75,7 @@ class Plugin extends PluginBase
     public function register()
     {
         $this->app->register(\RLuders\Cors\Providers\CorsServiceProvider::class);
-        $this->app['router']->middleware('cors', \Barryvdh\Cors\HandleCors::class);
-        $this->app['router']->prependMiddlewareToGroup('api', \Barryvdh\Cors\HandleCors::class);
+        $this->app['router']->middleware('cors', \Fruitcake\Cors\HandleCors::class);
+        $this->app['router']->prependMiddlewareToGroup('api', \Fruitcake\Cors\HandleCors::class);
     }
 }

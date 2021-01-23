@@ -16,6 +16,10 @@ return [
                 'label' => 'Suportar credenciais',
                 'comment' => "Habilite para suportar credenciais entre domínios."
             ],
+            'paths' => [
+                'label' => 'Paths',
+                'comment' => 'Os endereços da URL que permitirão CORS.'
+            ],
             'allowedOrigins' => [
                 'label' => 'Origens permitidas',
                 'comment' => 'Os domínios que podem realizar requisições para o seu site (use * para permitir todos).'

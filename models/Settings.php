@@ -34,11 +34,12 @@ class Settings extends Model
      */
     public function initSettingsData()
     {
-        $this->supportsCredentials = false;
+        $this->paths = 'api/*';
         $this->allowedOrigins = '*';
         $this->allowedHeaders = 'Content-Type X-Requested-With';
         $this->allowedMethods = '*';
         $this->exposedHeaders = '';
         $this->maxAge = 0;
+        $this->supportsCredentials = false;
     }
 }

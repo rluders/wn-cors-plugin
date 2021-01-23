@@ -16,6 +16,10 @@ return [
                 'label' => 'Support credentials',
                 'comment' => "Enable it to support credentials between domains."
             ],
+            'paths' => [
+                'label' => 'Paths',
+                'comment' => 'The url paths that will allow CORS.'
+            ],
             'allowedOrigins' => [
                 'label' => 'Allowed Origins',
                 'comment' => 'The domains that do requests to your site (use * for all domains).'

@@ -4,8 +4,6 @@ namespace RLuders\Cors\Providers;
 
 use Config;
 use Asm89\Stack\CorsService;
-use Barryvdh\Cors\HandleCors;
-use Barryvdh\Cors\HandlePreflight;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use RLuders\Cors\Models\Settings;
@@ -29,17 +27,7 @@ class CorsServiceProvider extends BaseServiceProvider
         $this->app->singleton(
             CorsService::class,
             function ($app) {
-                $options = $app['config']->get('cors');
-
-                if (isset($options['allowedOrigins'])) {
-                    foreach ($options['allowedOrigins'] as $origin) {
-                        if (strpos($origin, '*') !== false) {
-                            $options['allowedOriginsPatterns'][] = $this->convertWildcardToPattern($origin);
-                        }
-                    }
-                }
-
-                return new CorsService($options);
+                return new CorsService($this->corsOptions(), $app);
             }
         );
     }
@@ -53,14 +41,29 @@ class CorsServiceProvider extends BaseServiceProvider
         $this->loadConfiguration();
 
         $kernel = $this->app->make(Kernel::class);
+        $this->app['router']->middleware('cors', \Fruitcake\Cors\HandleCors::class);
+    }
 
-        // When the HandleCors middleware is not attached globally, add the PreflightCheck
-        if (!$kernel->hasMiddleware(HandleCors::class)) {
-            $kernel->prependMiddleware(HandlePreflight::class);
+    /**
+     * Load the configuration
+     *
+     * @return array
+     */
+    protected function corsOptions()
+    {
+        $options = $this->app['config']->get('cors');
+
+        if (isset($options['allowedOrigins'])) {
+            foreach ($options['allowedOrigins'] as $key => $value) {
+                if (strpos($value, '*') !== false) {
+                    $options['allowedOriginsPatterns'][$key] = $this->convertWildcardToPattern($value);
+                }
+            }
         }
 
-        $this->app['router']->middleware('cors', \Barryvdh\Cors\HandleCors::class);
+        return $options;
     }
+
 
     /**
      * Create a pattern for a wildcard, based on Str::is() from Laravel
@@ -91,12 +94,14 @@ class CorsServiceProvider extends BaseServiceProvider
         Config::set(
             'cors',
             [
-                'supportsCredentials' => (bool)Settings::get('supportsCredentials'),
-                'allowedOrigins' => explode(' ', Settings::get('allowedOrigins')),
-                'allowedHeaders' => explode(' ', Settings::get('allowedHeaders')),
+                'paths' => explode(' ', Settings::get('paths')),
                 'allowedMethods' => explode(' ', Settings::get('allowedMethods')),
+                'allowedOrigins' => explode(' ', Settings::get('allowedOrigins')),
+                'allowedOriginsPatterns' => explode(' ', Settings::get('allowedOriginsPatterns')),
+                'allowedHeaders' => explode(' ', Settings::get('allowedHeaders')),
                 'exposedHeaders' => explode(' ', Settings::get('exposedHeaders')),
-                'maxAge' => (int)Settings::get('maxAge')
+                'maxAge' => (int)Settings::get('max_age'),
+                'supportsCredentials' => (bool)Settings::get('supportsCredentials'),
             ]
         );
     }
