@@ -2,33 +2,9 @@
   "name": "rluders/cors",
   "type": "october-plugin",
   "description": "CORS plugin for OctoberCMS",
-  "keywords": [
-    "october",
-    "cms",
-    "octobercms",
-    "api",
-    "authentication",
-    "cors"
-  ],
-  "homepage": "http://www.luders.com.br",
   "license": "MIT",
-  "authors": [
-    {
-      "name": "Ricardo Lüders",
-      "email": "ricardo@luders.com.br",
-      "homepage": "http://www.luders.com.br",
-      "role": "Developer"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "RLuders\\Cors\\": ""
-    }
-  },
   "require": {
-    "php": ">=7.2",
-    "fruitcake/laravel-cors": "^2.0"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "php": ">=7.0",
+    "fruitcake/laravel-cors": "~2.0"
+  }
 }
