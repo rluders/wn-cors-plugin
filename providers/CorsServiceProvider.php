@@ -41,7 +41,7 @@ class CorsServiceProvider extends BaseServiceProvider
         $this->loadConfiguration();
 
         $kernel = $this->app->make(Kernel::class);
-        $this->app['router']->middleware('cors', \Fruitcake\Cors\HandleCors::class);
+        $this->app['router']->middleware('cors', \Illuminate\Http\Middleware\HandleCors::class);
     }
 
     /**
